@@ -2,9 +2,29 @@
 <html>
     <head>
         <title>SmartShop.com</title>
+        <style>
+            h1 {
+                text-align: center;
+            }
+            img {
+                max-width: inherit;
+            }
+            td {
+                vertical-align: top;
+                text-align: justify;
+                padding: 5px;
+                max-width: 300px;
+            }
+            .linkChange {
+                text-decoration: none;
+            }
+            .imgVisibility {
+                display: none;
+            }
+        </style>
     </head>
     <body>
-        <h1>SmartShop.com</h1>
+        <h1 id="title">SmartShop.com</h1>
         <div>
             <table>
                 <tr>
@@ -25,35 +45,35 @@
                     <td><a href="https://www.amazon.pl/smartfon-Dual-SIM-wy%C5%9Bwietlacz-Vision-HD-niebieski/dp/B08J3XLSPV/ref=zg_bs_20788267031_20?_encoding=UTF8&psc=1&refRID=RZACA8TJ29FWK6M0GZH1" target="_blank">Moto E7 Plus</a></td>
                 </tr>
                 <tr>
-                    <td>Description:
+                    <td>
                         <ul>
                             <li>Bezpieczeństwo wysokiej klasy</li>
                             <li>Galaxy A21s wyposażono w skaner linii papilarnych z tyłu obudowy, który rozpoznaje Twój niepowtarzalny odcisk palca, więc tylko Ty możesz jednym ruchem odblokować telefon</li>
                             <li>Poczwórny aparat</li>
                         </ul>
                     </td>
-                    <td>Description:
+                    <td>
                         <ul>
                             <li>Ekran: 6, 47", 1080 x 2340 pikseli</li>
                             <li>Procesor: Snapdragon 730G 2 2 GHz</li>
                             <li>Aparat: Quad, 64MP + 8MP + 2MP + 5MP</li>
                         </ul>
                     </td>
-                    <td>Description:
+                    <td>
                         <ul>
                             <li>Typ: smartfon</li>
                             <li>Typ SIM: Nano-SIM i eSIM</li>
                             <li>Sieć 2G: GSM 850 / 900 / 1800 / 1900</li>
                         </ul>
                     </td>
-                    <td>Description:
+                    <td>
                         <ul>
                             <li>Mobilna platforma Qualcomm Snapdragon 750G 5G - oparta na wydajności sztuczna inteligencja obsługująca niesamowite grafiki i Cloud Gaming 5G.</li>
                             <li>Bateria Warp Charge 30T Plus, 4500 mAh - Ulepszony transfer mocy ładuje baterię Nord CE od 0 do 70% w zaledwie 30 minut.</li>
                             <li>OxygenOS 11 - Wstępnie zainstalowany z Google Communication Apps, w tym Messages, Phone i Duo.</li>
                         </ul>
                     </td>
-                    <td>Description:
+                    <td>
                         <ul>
                             <li>System kamer 48 MP. * Rejestruj wyraźne i wspaniałe zdjęcia w nocy i wyczaruj w swoich portretach fajne efekty.</li>
                             <li>Zasilanie akumulatora przez ponad dwa dni. ** Twój smartfon będzie miał radość z noszenia dzięki bardzo mocnej baterii 5000 mAh.</li>
@@ -62,11 +82,11 @@
                     </td>
                 </tr>      
                 <tr>
-                    <td>599,00 zł</td>
-                    <td>1 379,00 zł</td>
-                    <td>1 520,48 zł</td>
-                    <td>1 518,02 zł</td>
-                    <td>499,00 zł</td>
+                    <td class="price">599,00 zł</td>
+                    <td class="price">1 379,00 zł</td>
+                    <td class="price">1 520,48 zł</td>
+                    <td class="price">1 518,02 zł</td>
+                    <td class="price">499,00 zł</td>
                 </tr> 
             </table>
         </div>
@@ -76,10 +96,61 @@
                 <p><button>Send a message!</button></p>
             </form>
         </div>
+        <div>
+            <h2>Button's to check that functions work's</h2>
+            <button onclick='changeH1Element()'>Click to change H1 title</button>
+            <button onclick='changeBodyBG()'>Click to change body background</button>
+            <button onclick='changeFooterToFake()'>Click to change footer address</button>
+            <button onclick='addClassToLinks()'>Click to add class to links</button>
+            <button onclick='hideImages()'>Click to add class to images and hide them</button>
+        </div>
         <footer>
-            <p>370 Ugly Avenue, New York</p>
+            <p id="address">370 Ugly Avenue, New York</p>
             <p>Copyright by SmartShop.com</p>
         </footer>
+
+        <script lang="text/javascript">
+            function changeH1Element(){
+                let changer = document.getElementById('title')
+                changer.innerText = "SmartShop.pl cheap mobiles for smart people"
+            }
+            
+            function changeBodyBG(){
+                document.body.style.backgroundColor = 'pink'
+            }
+
+            function changeFooterToFake(){
+                let changer = document.getElementById('address')
+                changer.innerText = '073 Pretty Avenue, Kingston'
+            }
+            
+            function addClassToLinks(){
+                let allLinks = document.querySelectorAll('a')
+                for (let links of allLinks){
+                    links.classList.toggle('linkChange')
+                }
+            }
+
+            function hideImages(){
+                let allImages = document.querySelectorAll('img')
+                for (let images of allImages){
+                    images.classList.toggle('imgVisibility')
+                }
+            }
+//EX12: Write a function to color the price of each product in a different one every time it's invoked-->
+            function changePriceColor(){
+                let colors = ['red', 'green', 'blue']
+                for (let pickColor of colors){
+                    return pickColor = Math.floor(Math.random() * color.length)
+                }
+
+                let changeColor = document.getElementsByClassName('price')
+               // for (let )
+               
+            }
+
+
+        </script>
     </body>
 </html>
 
